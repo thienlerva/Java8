@@ -50,5 +50,15 @@ public class OptionalDemo {
         Set<Map.Entry<Color, Integer>> set = colorIntegerMap.entrySet();
 
         System.out.println(set);
+
+        String password = "password";
+        Optional<String> opt4 = Optional.ofNullable(password);
+        System.out.println(opt4.filter(p -> p.equals("password")).isPresent());
+        opt1.ifPresent(System.out::println);
+
+        List<String> list = Arrays.asList("How", "are", "you");
+        Optional<String> testNull = list.stream().filter(x -> x.length() > 2).findFirst();
+        System.out.println(testNull);
+        testNull.ifPresent(System.out::println);
     }
 }
