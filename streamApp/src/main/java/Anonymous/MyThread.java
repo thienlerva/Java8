@@ -67,5 +67,14 @@ public class MyThread {
         Thread t = new Thread(r);
         t.start();
         System.out.println("Main thread");
+
+        Thread thread = new Thread() {
+            public void run() {
+                System.out.println("Child Thread");
+            }
+        };
+        thread.start();
+
+        new Thread(() -> System.out.println("Child Thread")).start();
     }
 }
